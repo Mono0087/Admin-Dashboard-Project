@@ -23,8 +23,20 @@ a {
   text-decoration: none;
   color: #fff;
 }
+
 p {
   margin: 0;
+}
+
+button,
+a {
+  -webkit-transition: all 0.1s;
+  -o-transition: all 0.1s;
+  transition: all 0.1s;
+}
+button:hover,
+a:hover {
+  opacity: 0.8;
 }
 
 .container {
@@ -53,11 +65,6 @@ p {
   overflow: auto;
   background-color: #fff;
 }
-.container .main-side *:focus {
-  outline: none;
-  outline: #b96060 solid 2px;
-  border-radius: 5px;
-}
 .container .main-side button {
   padding: 0;
   border: none;
@@ -68,6 +75,7 @@ p {
   background-position: center center;
   cursor: pointer;
 }
+
 sidebar .wrapper {
   height: 100vh;
   background-color: #b96060;
@@ -82,7 +90,7 @@ sidebar .wrapper {
   font-weight: 400;
   color: #fff;
 }
-sidebar .wrapper *:focus {
+sidebar .wrapper *:focus-visible {
   outline: none;
   outline: #000 solid 2px !important;
   border-radius: 5px;
@@ -251,13 +259,23 @@ main .wrapper {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  gap: 15px;
+}
+main .wrapper h2 {
+  font-size: 1.2rem;
+  line-height: 0;
+}
+main .wrapper h3 {
+  font-size: 1.1rem;
+  margin: 0;
+}
+main .wrapper h4 {
+  font-size: 1rem;
+  margin: 0;
+  color: #000;
 }
 main .wrapper .projects {
   width: 100%;
-}
-main .wrapper .projects h2 {
-  font-size: 1.2rem;
-  line-height: 0;
 }
 main .wrapper .projects .cards_container {
   display: grid;
@@ -280,10 +298,6 @@ main .wrapper .projects .cards_container .card {
       -ms-flex-direction: column;
           flex-direction: column;
 }
-main .wrapper .projects .cards_container .card h3 {
-  font-size: 1.1rem;
-  margin: 0;
-}
 main .wrapper .projects .cards_container .card p {
   margin-bottom: 5px;
 }
@@ -305,4 +319,34 @@ main .wrapper .projects .cards_container .card .card_buttons .eye {
 }
 main .wrapper .projects .cards_container .card .card_buttons .branch {
   background-image: url(/icons/source-branch.svg);
+}
+main .wrapper aside {
+  font-size: 0.8rem;
+}
+main .wrapper aside .announcements_list {
+  background-color: #faebd7;
+  border-radius: 5px;
+  padding: 15px;
+}
+main .wrapper aside .announcements_list ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 15px;
+  position: relative;
+}
+main .wrapper aside .announcements_list ul li + li::before {
+  content: "";
+  position: absolute;
+  -webkit-transform: translateY(-400%);
+      -ms-transform: translateY(-400%);
+          transform: translateY(-400%);
+  height: 2px;
+  width: 100%;
+  border-radius: 50px;
+  background-color: #d5cfcf;
 }/*# sourceMappingURL=main.css.map */

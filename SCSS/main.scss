@@ -21,11 +21,16 @@ li {
 a {
   text-decoration: none;
   color: #fff;
-  :hover {
-  }
 }
 p {
   margin: 0;
+}
+button,
+a {
+  transition: all 0.1s;
+  &:hover {
+    opacity: 0.8;
+  }
 }
 
 //CONTAINER//////////////////////
@@ -50,11 +55,6 @@ p {
   .main-side {
     overflow: auto;
     background-color: #fff;
-    *:focus {
-      outline: none;
-      outline: $main-theme solid 2px;
-      border-radius: 5px;
-    }
     button {
       padding: 0;
       border: none;
@@ -64,8 +64,6 @@ p {
       height: 20px;
       background-position: center center;
       cursor: pointer;
-    }
-    li a:focus {
     }
   }
 }
@@ -79,7 +77,7 @@ sidebar .wrapper {
   gap: 40px;
   font-weight: 400;
   color: #fff;
-  *:focus {
+  *:focus-visible {
     outline: none;
     outline: #000 solid 2px !important;
     border-radius: 5px;
@@ -206,11 +204,21 @@ header .wrapper {
 main .wrapper {
   display: flex;
   justify-content: space-between;
+  gap: 15px;
+  h2 {
+    font-size: 1.2rem;
+    line-height: 0;
+  }
+  h3 {
+    font-size: 1.1rem;
+    margin: 0;
+  }
+  h4 {
+    font-size: 1rem;
+    margin: 0;
+    color: #000;
+  }
   .projects {
-    h2 {
-      font-size: 1.2rem;
-      line-height: 0;
-    }
     width: 100%;
     .cards_container {
       a {
@@ -226,11 +234,7 @@ main .wrapper {
         background-color: $bg-main;
         display: flex;
         flex-direction: column;
-        h3 {
-          font-size: 1.1rem;
-          margin: 0;
-        }
-        p{
+        p {
           margin-bottom: 5px;
         }
         .card_buttons {
@@ -238,6 +242,7 @@ main .wrapper {
           display: flex;
           gap: 5px;
           justify-content: end;
+
           .star {
             background-image: url(/icons/star-plus-outline.svg);
           }
@@ -251,6 +256,29 @@ main .wrapper {
       }
     }
   }
+  // ASIDE //////////////////
   aside {
+    font-size: 0.8rem;
+    .announcements_list{
+      background-color: $bg-main;
+      border-radius: 5px;
+      padding: 15px;
+      ul{
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        position: relative;
+        li + li::before {
+          content: '';
+          position: absolute;
+          transform: translateY(-400%);
+          height: 2px;
+          width: 100%;
+          border-radius: 50px;
+          background-color: $bg-grey;
+        }
+
+      }
+    }
   }
 }
