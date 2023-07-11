@@ -28,8 +28,9 @@ p {
 }
 
 .container {
+  height: 100vh;
   display: grid;
-  grid-template: 1fr auto/minmax(180px, 1fr) 4fr;
+  grid-template-columns: minmax(180px, 1fr) 5fr;
 }
 .container .wrapper {
   padding: 15px;
@@ -47,6 +48,10 @@ p {
 .container .wrapper .avatar img {
   width: 100%;
   height: 100%;
+}
+.container .main-side {
+  overflow: auto;
+  background-color: #fff;
 }
 .container .main-side *:focus {
   outline: none;
@@ -126,6 +131,9 @@ header .wrapper {
           flex-direction: column;
   gap: 15px;
   color: #000;
+  background-color: #faebd7;
+  -webkit-box-shadow: 0 2px 9px 0px #d5cfcf;
+          box-shadow: 0 2px 9px 0px #d5cfcf;
 }
 header .wrapper a {
   color: #000;
@@ -234,4 +242,67 @@ header .wrapper .admin-controls a {
   background-color: #b96060;
   border-radius: 50px;
   padding: 5px 15px;
+}
+
+main .wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+main .wrapper .projects {
+  width: 100%;
+}
+main .wrapper .projects h2 {
+  font-size: 1.2rem;
+  line-height: 0;
+}
+main .wrapper .projects .cards_container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 15px;
+}
+main .wrapper .projects .cards_container a {
+  color: #000;
+}
+main .wrapper .projects .cards_container .card {
+  border-left: 4px solid #b96060;
+  border-radius: 5px;
+  padding: 15px;
+  background-color: #faebd7;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+main .wrapper .projects .cards_container .card h3 {
+  font-size: 1.1rem;
+  margin: 0;
+}
+main .wrapper .projects .cards_container .card p {
+  margin-bottom: 5px;
+}
+main .wrapper .projects .cards_container .card .card_buttons {
+  margin-top: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 5px;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+}
+main .wrapper .projects .cards_container .card .card_buttons .star {
+  background-image: url(/icons/star-plus-outline.svg);
+}
+main .wrapper .projects .cards_container .card .card_buttons .eye {
+  background-image: url(/icons/eye-plus-outline.svg);
+}
+main .wrapper .projects .cards_container .card .card_buttons .branch {
+  background-image: url(/icons/source-branch.svg);
 }/*# sourceMappingURL=main.css.map */
